@@ -3,9 +3,9 @@
 # External Libraries
 require "version_gem"
 require "active_support/concern"
+require_relative "connection_lambda/version"
 
 # This Library
-require_relative "connection_lambda/version"
 
 module Spyke
   module ConnectionLambda

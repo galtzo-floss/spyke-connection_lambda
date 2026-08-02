@@ -10,6 +10,12 @@ require:
 
 inherit_gem:
   rubocop-lts: config/rubygem.yml
+inherit_from:
+  - .rubocop_rspec.yml
+plugins:
+  - rubocop-rspec
+  - rubocop-on-rbs
+  - rubocop-packaging
 
 # Metrics cops are disabled in Standard by default)
 Metrics:
@@ -28,3 +34,24 @@ Bundler/GemVersion:
 Bundler/OrderedGems:
   Enabled: true
   TreatCommentsAsGroupSeparators: false
+AllCops:
+  Exclude:
+    - certs/**/*
+    - checksums/**/*
+    - docs/**/*
+    - examples/**/*
+    - fixtures/**/*
+    - gemfiles/*.gemfile
+    - gemfiles/vendor/**/*
+    - pkg/**/*
+    - README.md
+    - results/**/*
+    - spec/fixtures/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - "**/vendor/**/*"
+    - AGENTS.md
+RBS:
+  Enabled: true
+Layout/IndentationConsistency:
+  Exclude: ['*.md']

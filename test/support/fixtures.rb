@@ -10,15 +10,15 @@ class JSONParser < Faraday::Middleware
       errors: json[:errors]
     }
   rescue MultiJson::ParseError => e
-    env.body = { errors: { base: [error: e.message] } }
+    env.body = {errors: {base: [error: e.message]}}
   end
 end
 
 Spyke::Base.connection = Faraday.new(url: "http://sushi.com") do |faraday|
-  faraday.request   :multipart
-  faraday.request   :json
-  faraday.use       JSONParser
-  faraday.adapter   Faraday.default_adapter
+  faraday.request :multipart
+  faraday.request :json
+  faraday.use JSONParser
+  faraday.adapter Faraday.default_adapter
 end
 
 # Test classes
@@ -57,9 +57,14 @@ class Recipe < Spyke::Base
 
   private
 
-  def before_create_callback; end
-  def before_update_callback; end
-  def before_save_callback; end
+  def before_create_callback
+  end
+
+  def before_update_callback
+  end
+
+  def before_save_callback
+  end
 end
 
 class Image < Spyke::Base
@@ -115,8 +120,8 @@ end
 
 class OtherApi < Spyke::Base
   self.connection = Faraday.new(url: "http://sashimi.com") do |faraday|
-    faraday.use       JSONParser
-    faraday.adapter   Faraday.default_adapter
+    faraday.use JSONParser
+    faraday.adapter Faraday.default_adapter
   end
 end
 
@@ -132,6 +137,7 @@ end
 
 class ProcConnRecipe < OtherRecipe
   prepend Spyke::ConnectionLambda
+
   uri "proc-recipes/recent"
 
   self.connection_lambda = proc do |conn|
@@ -142,6 +148,7 @@ end
 
 class LambdaConnRecipe < OtherRecipe
   prepend Spyke::ConnectionLambda
+
   uri "lambda-recipes/recent"
 
   self.connection_lambda = lambda { |conn|
@@ -152,6 +159,7 @@ end
 
 class MethConnRecipe < OtherRecipe
   prepend Spyke::ConnectionLambda
+
   uri "meth-recipes/recent"
 
   def self.connection_finder(conn)
@@ -164,6 +172,7 @@ end
 
 class SymbolConnRecipe < OtherRecipe
   prepend Spyke::ConnectionLambda
+
   uri "symbol-recipes/recent"
 
   self.connection_lambda = :connection_finder
