@@ -9,7 +9,7 @@ gemspec
 
 platform :mri do
   # Debugging
-  gem "pry-byebug"
+  gem "debug", require: false
 end
 
 # Linting
