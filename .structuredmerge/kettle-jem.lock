@@ -146,7 +146,7 @@ template_state:
     gemfiles/modular/stringio/vHEAD.gemfile.example: e0497ab6dad9667b22725485b781e9d99349a079250eb29cb125d58f01f4a5be
     gemfiles/modular/style.gemfile.example: a15db732f566d958c2459ef549ae3877d984df3d205116e714284d1fe4f9b068
     gemfiles/modular/style_local.gemfile.example: '0083605323d23879dc7223f0198e9f1db24a25fa38730c4dbcc71c7a8a4c307f'
-    gemfiles/modular/templating.gemfile.example: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
+    gemfiles/modular/templating.gemfile.example: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
     gemfiles/modular/templating_local.gemfile.example: 84b328af40ee4f9b0355cd5b466f7c7903c49f86e9eb0d1bc3a1f34c8f0f1668
     gemfiles/modular/webrick/r4/v1.9.gemfile.example: 1ee940ff54d5ca3ce7fcff0d82ee9553386979656b9e220d5be5404d0991d5ea
     gemfiles/modular/webrick/vHEAD.gemfile.example: da545f591af987648ffbaba181707480a38dfb375db7d289617986ec2c2ca23b
@@ -1005,8 +1005,8 @@ files:
   gemfiles/modular/templating.gemfile:
     recipe: template_source_application_gemfiles_modular_templating_gemfile
     action: write
-    dest_sha256: f63e9254dcd76f02406fff515090570d2394dae220faac4f9b3cad6c1a78346a
-    input_fingerprint: de5fa0404c7dce1cc1133ab57f707aac403cf8f9e9f7b3ead111c82cd21387ed
+    dest_sha256: 3b2db799f879401ec595c54a5c3ca825b1f51a9e8976b932f80f12a06ea9791d
+    input_fingerprint: f94920e521ffbda5fee047461e53a804455b02c3bc366b974ded4581b3f96303
     template_sources:
     - gemfiles/modular/templating.gemfile.example
   gemfiles/modular/templating_local.gemfile:
@@ -1090,7 +1090,7 @@ files:
     recipe: template_source_application_lib_spyke_connection_lambda_version_rb
     action: write
     dest_sha256: c682429160fe1ca6c81844332b2fbfa7b5989ddf0debf94c03739eacfe80b87a
-    input_fingerprint: ca15e263362eb2d1ea0aa403a646e27e28db5896d29e126a706f1ffc6466f767
+    input_fingerprint: fba733757604c429ccfa42823a92f318f92ab7afcf3b45e3c5fc9bea4e20c990
     template_sources:
     - lib/gem/version.rb.example
   mise.toml:
@@ -1132,6 +1132,6 @@ files:
     recipe: template_source_application_spyke_connection_lambda_gemspec
     action: write
     dest_sha256: 432268d0c1ff2d6d88a45f3e5c426d039f7eb8a5e2d715be57692b11e49fb796
-    input_fingerprint: b780e894d214e6aa79c8bb8ddbef22c6c0b5bbb8bbc734f2bf1bf1b15d463202
+    input_fingerprint: be2b759e2ae594a5c242ae886517391707bae706cd5592b3a737eeaa34802cec
     template_sources:
     - gem.gemspec.example
