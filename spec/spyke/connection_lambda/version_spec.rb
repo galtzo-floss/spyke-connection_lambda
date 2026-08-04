@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "anonymous_loader"
-require "spyke-connection_lambda"
+require "spyke/connection_lambda"
 RSpec.describe Spyke::ConnectionLambda::Version do
   it_behaves_like "a Version module", described_class
 

@@ -183,7 +183,6 @@ GEM
     lint_roller (1.1.0)
     logger (1.7.0)
     method_source (1.1.0)
-    mini_portile2 (2.8.9)
     minitest (5.27.0)
     minitest-line (0.6.5)
       minitest (~> 5.0)
@@ -203,9 +202,6 @@ GEM
     mutex_m (0.3.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
-    nokogiri (1.19.4)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
     nomono (1.1.4)
@@ -463,7 +459,6 @@ GEM
     zlib (3.2.3)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
