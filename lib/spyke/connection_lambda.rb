@@ -3,6 +3,7 @@
 # External Libraries
 require "version_gem"
 require "active_support/concern"
+require "active_support/core_ext/class/attribute"
 require_relative "connection_lambda/version"
 
 # This Library
