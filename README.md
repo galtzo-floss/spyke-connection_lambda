@@ -21,6 +21,12 @@ I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-ta
 
 ## 🌻 Synopsis <a href="https://discord.gg/3qme4XHNKN"><img alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px.svg" width="8%" align="right"/></a> <a href="https://ruby-toolbox.com"><img alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5" src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-128px.svg" width="8%" align="right"/></a>
 
+`spyke-connection_lambda` adds a configurable connection decorator to Spyke
+models. The configured callable receives the connection returned by the
+inherited `connection` method and may return a modified connection, which is
+useful for tenant routing, instrumentation, or test-specific connection
+selection.
+
 ## 💡 Info you can shake a stick at
 
 | Tokens to Remember | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace] |
@@ -119,9 +125,34 @@ gem install spyke-connection_lambda
 
 ## ⚙️ Configuration
 
+Include the module in the Spyke model or base class whose connection should be
+decorated. Set `connection_lambda` to a `Proc`, lambda, or method name. The
+callable receives the inherited connection; leaving it unset preserves the
+original Spyke behavior.
+
+```ruby
+class Account < Spyke::Base
+  include Spyke::ConnectionLambda
+
+  self.connection_lambda = ->(connection) { [:reader, connection] }
+end
+```
+
 ## 🔧 Basic Usage
 
-See the specs, as the examples are very clear!
+```ruby
+class Account < Spyke::Base
+  include Spyke::ConnectionLambda
+
+  def self.decorate_connection(connection)
+    connection.with(tenant: Current.tenant)
+  end
+
+  self.connection_lambda = :decorate_connection
+end
+
+Account.connection
+```
 
 ## 🦷 FLOSS Funding
 
