@@ -44,7 +44,14 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
-- Prepare project for kettle-jem templates: updated 11 project files across dependencies (11).
+- [kc] [kettle-jem][prepare]: updated 11 project files:
+  - dependencies (11)
+
+- [kc] [kettle-jem][template]: updated 7 project files:
+  - configuration (1)
+  - dependencies (1)
+  - documentation (1)
+  - other (4)
 
 ### Deprecated
 
