@@ -2,7 +2,7 @@
   "lib/spyke/connection_lambda.rb:2621450008": [
     [17, 7, 60, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3361415896]
   ],
-  "spyke-connection_lambda.gemspec:1672798757": [
+  "spyke-connection_lambda.gemspec:3090099302": [
     [165, 3, 42, "Gemspec/DependencyVersion: Dependency version specification is required.", 498701382],
     [166, 3, 47, "Gemspec/DependencyVersion: Dependency version specification is required.", 2015476677],
     [167, 3, 52, "Gemspec/DependencyVersion: Dependency version specification is required.", 3489506113],
