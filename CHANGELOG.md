@@ -57,6 +57,10 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- `include Spyke::ConnectionLambda` (as documented) now defines
+  `connection_lambda`; previously only `prepend` on ActiveSupport >= 6.1 worked,
+  and loading the gem raised `ArgumentError` on ActiveSupport < 6.1.
+
 - kettle-jem-template-20260720-003 - StructuredMerge Git diff driver config now
   uses the installed `smorg-rb` driver command.
 - kettle-jem-template-20260725-001 - Release pull request branches beginning

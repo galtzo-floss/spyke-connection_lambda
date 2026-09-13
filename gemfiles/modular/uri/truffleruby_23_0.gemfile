@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+if RUBY_ENGINE == "truffleruby" && RUBY_ENGINE_VERSION.start_with?("23.0")
+  # uri >= 0.13 crashes TruffleRuby 23.0's regex engine (ShouldNotReachHere) in URI.parse,
+  # which RubyGems calls while validating gemspec metadata.
+  gem "uri", "< 0.13"
+end

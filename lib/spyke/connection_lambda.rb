@@ -2,19 +2,38 @@
 
 # External Libraries
 require "version_gem"
-require "active_support/concern"
 require "active_support/core_ext/class/attribute"
 require_relative "connection_lambda/version"
 
 # This Library
 
 module Spyke
+  # Decorates a Spyke model's class-level +connection+ with a configurable callable.
+  # Works with both +include+ and +prepend+, on every supported ActiveSupport.
   module ConnectionLambda
-    extend ActiveSupport::Concern
+    class << self
+      # +include+: class methods sit above the including class, like ActiveSupport::Concern.
+      def included(base)
+        super
+        define_connection_lambda(base)
+        base.extend(ClassMethods)
+      end
 
-    prepended do
-      # Can be set to Proc.new {} or lambda {}
-      class_attribute :connection_lambda, instance_accessor: false
+      # +prepend+: class methods sit in front of the class, so they wrap a +connection+
+      # defined directly on it (matching ActiveSupport::Concern on ActiveSupport >= 6.1).
+      def prepended(base)
+        super
+        define_connection_lambda(base)
+        # Module#prepend (Ruby >= 2.0), not Array#prepend (Ruby >= 2.5).
+        base.singleton_class.prepend(ClassMethods) # rubocop:disable Lint/LtsRuby/UnavailableMethod
+      end
+
+      private
+
+      def define_connection_lambda(base)
+        # Can be set to Proc.new {} or lambda {}
+        base.class_attribute(:connection_lambda, instance_accessor: false)
+      end
     end
 
     module ClassMethods

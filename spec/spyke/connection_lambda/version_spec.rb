@@ -47,6 +47,44 @@ RSpec.describe Spyke::ConnectionLambda::Version do
     expect(target.connection).to eq([:method, :base])
   end
 
+  context "when included, as documented in the README" do
+    let(:target) do
+      parent = Class.new do
+        def self.connection
+          :base
+        end
+      end
+
+      Class.new(parent) do
+        include Spyke::ConnectionLambda
+
+        def self.decorate(connection)
+          [:method, connection]
+        end
+      end
+    end
+
+    it "returns the inherited connection when no lambda is configured" do
+      expect(target.connection).to eq(:base)
+    end
+
+    it "passes the inherited connection to a callable lambda" do
+      target.connection_lambda = ->(connection) { [:lambda, connection] }
+
+      expect(target.connection).to eq([:lambda, :base])
+    end
+
+    it "passes the inherited connection to a named callback" do
+      target.connection_lambda = :decorate
+
+      expect(target.connection).to eq([:method, :base])
+    end
+
+    it "does not define an instance reader" do
+      expect(target.new).not_to respond_to(:connection_lambda)
+    end
+  end
+
   it "executes the version file for coverage without redefining constants" do
     paths = [
       File.expand_path("../../../lib/spyke/connection_lambda/version.rb", __dir__),
