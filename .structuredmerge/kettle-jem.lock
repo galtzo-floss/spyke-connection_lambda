@@ -64,8 +64,11 @@ template_state:
     - Gemfile
     - README.md
     - bin/turbo_tests2
+    - gemfiles/modular/coverage_local.gemfile
     - gemfiles/modular/style_local.gemfile
     - gemfiles/modular/templating.gemfile
+    - gemfiles/modular/templating_local.gemfile
+    - spec/spyke/connection_lambda/version_spec.rb
     - spyke-connection_lambda.gemspec
   checksums:
     ".aiignore.example": 48a5dfdd93afd1a15fdce39cc28ca9920263f00018b0968ab031fa744521e5ce
