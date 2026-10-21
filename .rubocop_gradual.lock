@@ -1,5 +1,8 @@
 {
-  "spyke-connection_lambda.gemspec:3002025268": [
+  "gemfiles/modular/style_local.gemfile:803618203": [
+    [71, 23, 20, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 1851388465]
+  ],
+  "spyke-connection_lambda.gemspec:3510434307": [
     [165, 3, 42, "Gemspec/DependencyVersion: Dependency version specification is required.", 498701382],
     [166, 3, 47, "Gemspec/DependencyVersion: Dependency version specification is required.", 2015476677],
     [167, 3, 52, "Gemspec/DependencyVersion: Dependency version specification is required.", 3489506113],

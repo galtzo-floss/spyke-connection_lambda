@@ -86,10 +86,8 @@ RSpec.describe Spyke::ConnectionLambda::Version do
   end
 
   it "executes the version file for coverage without redefining constants" do
-    paths = [
-      File.expand_path("../../../lib/spyke/connection_lambda/version.rb", __dir__),
-      File.expand_path("../../../lib/spyke/connection_lambda/version_gem.rb", __dir__)
-    ].select { |path| File.file?(path) }
+    dir = File.expand_path("../../../lib/spyke/connection_lambda", __dir__)
+    paths = %w[version.rb version_gem.rb].map { |file| File.join(dir, file) }.select { |path| File.file?(path) }
     anonymous_namespace = AnonymousLoader.load(files: paths)
 
     expect(anonymous_namespace::Spyke::ConnectionLambda::Version::VERSION).to eq(described_class::VERSION)
