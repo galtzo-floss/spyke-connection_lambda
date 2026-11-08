@@ -1,17 +1,14 @@
 {
-  "gemfiles/modular/style_local.gemfile:803618203": [
-    [71, 23, 20, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 1851388465]
-  ],
-  "spyke-connection_lambda.gemspec:3510434307": [
-    [165, 3, 42, "Gemspec/DependencyVersion: Dependency version specification is required.", 498701382],
-    [166, 3, 47, "Gemspec/DependencyVersion: Dependency version specification is required.", 2015476677],
-    [167, 3, 52, "Gemspec/DependencyVersion: Dependency version specification is required.", 3489506113],
-    [168, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 593602651],
-    [169, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 204332093],
-    [170, 3, 37, "Gemspec/DependencyVersion: Dependency version specification is required.", 1202442760],
-    [171, 3, 43, "Gemspec/DependencyVersion: Dependency version specification is required.", 2802811655],
-    [172, 3, 48, "Gemspec/DependencyVersion: Dependency version specification is required.", 355398172],
-    [174, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 1641716169]
+  "spyke-connection_lambda.gemspec:352066727": [
+    [169, 3, 42, "Gemspec/DependencyVersion: Dependency version specification is required.", 498701382],
+    [170, 3, 47, "Gemspec/DependencyVersion: Dependency version specification is required.", 2015476677],
+    [171, 3, 52, "Gemspec/DependencyVersion: Dependency version specification is required.", 3489506113],
+    [172, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 593602651],
+    [173, 3, 44, "Gemspec/DependencyVersion: Dependency version specification is required.", 204332093],
+    [174, 3, 37, "Gemspec/DependencyVersion: Dependency version specification is required.", 1202442760],
+    [175, 3, 43, "Gemspec/DependencyVersion: Dependency version specification is required.", 2802811655],
+    [176, 3, 48, "Gemspec/DependencyVersion: Dependency version specification is required.", 355398172],
+    [178, 3, 41, "Gemspec/DependencyVersion: Dependency version specification is required.", 1641716169]
   ],
   "test/test_helper.rb:3074728927": [
     [27, 1, 54, "Lint/NonDeterministicRequireOrder: Sort files before requiring them.", 728169480],
