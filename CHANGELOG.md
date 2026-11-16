@@ -51,9 +51,9 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
-- [kc] kettle-jem/prepare: updated 24 project files:
+- [kc] kettle-jem/prepare: updated 27 project files:
   - configuration (2)
-  - dependencies (22)
+  - dependencies (25)
 
 - [kc] kettle-jem/template: updated 48 project files:
   - code and tests (2)
@@ -108,6 +108,7 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
+
 ### Security
 
 ## [1.0.0] - 2024-03-23
